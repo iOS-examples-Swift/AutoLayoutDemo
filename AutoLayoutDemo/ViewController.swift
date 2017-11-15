@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var leftView: UIView!
     var button: UIButton!
     var topConstraint: Constraint? = nil
+    var textLabel: UILabel!
+    var moreTextLabel: UILabel!
 
 
     override func viewDidLoad() {
@@ -38,6 +40,20 @@ class ViewController: UIViewController {
         self.button.addTarget(self, action: #selector(click), for: .touchUpInside)
         self.button.backgroundColor = .purple
         view.addSubview(self.button)
+        self.textLabel = UILabel()
+        self.textLabel.backgroundColor = .gray
+        self.textLabel.textColor = .black
+        self.textLabel.text = "这是一窜测试数据"
+        self.textLabel.textAlignment = .center
+        view.addSubview(self.textLabel)
+        self.moreTextLabel = UILabel()
+        self.moreTextLabel.backgroundColor = .yellow
+        self.moreTextLabel.textColor = .black
+        self.moreTextLabel.preferredMaxLayoutWidth = 300
+        self.moreTextLabel.numberOfLines = 0
+        self.moreTextLabel.text = "这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据"
+        view.addSubview(self.moreTextLabel)
+
 
         layout()
     }
@@ -71,9 +87,17 @@ class ViewController: UIViewController {
             make.width.equalTo(60)
             make.height.equalTo(30)
         }
+        textLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view.snp.top).offset(200)
+            make.left.equalTo(self.view.snp.left).offset(40)
+        }
+        moreTextLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(textLabel.snp.bottom).offset(10)
+            make.left.equalTo(textLabel.snp.left)
+        }
     }
 
-    func click() {
+    @objc func click() {
         UIView.animate(withDuration: 5) {
 //            self.topConstraint?.update(offset: 200)
             self.button.snp.updateConstraints({ (make) in
@@ -89,3 +113,12 @@ class ViewController: UIViewController {
     }
 }
 
+extension UILabel {
+    
+    open override var intrinsicContentSize: CGSize {
+        return CGSize(
+            width: super.intrinsicContentSize.width + 10,
+            height: super.intrinsicContentSize.height + 10
+        )
+    }
+}

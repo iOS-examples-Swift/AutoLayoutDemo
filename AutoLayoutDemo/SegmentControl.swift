@@ -16,7 +16,7 @@ public class SegmentControl: UIView {
     private var items: [UIButton] = []
     private var style: SetmentStyle!
 
-    public init(style: SetmentStyle? = SetmentStyle(), titles: [String], selectedIndex: ((Int) -> Void)? = nil) {
+    public init(style: SetmentStyle? = nil, titles: [String], selectedIndex: ((Int) -> Void)? = nil) {
         super.init(frame: .zero)
         self.titles = titles
         self.selectedIndex = selectedIndex
@@ -73,7 +73,7 @@ public class SegmentControl: UIView {
 
     }
 
-    func click(sender: UIButton)  {
+    @objc func click(sender: UIButton)  {
         UIView.animate(withDuration: 0.3) {
             sender.isSelected = true
             self.items.filter({ $0.tag != sender.tag }).forEach({ $0.isSelected = false })
