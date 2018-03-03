@@ -15,6 +15,7 @@
 		AA1A9F721F3763F500CF165F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1A9F711F3763F500CF165F /* Assets.xcassets */; };
 		AA1A9F751F3763F500CF165F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1A9F731F3763F500CF165F /* LaunchScreen.storyboard */; };
 		AA9FFED11FBD295A005967F7 /* DividedbyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9FFED01FBD295A005967F7 /* DividedbyController.swift */; };
+		AAC025BF204A9A9E000EAEAA /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC025BE204A9A9E000EAEAA /* TableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AA1A9F741F3763F500CF165F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1A9F761F3763F500CF165F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA9FFED01FBD295A005967F7 /* DividedbyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividedbyController.swift; sourceTree = "<group>"; };
+		AAC025BE204A9A9E000EAEAA /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		AB4366D2AC84DF257A7E14E3 /* Pods_AutoLayoutDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoLayoutDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B73E1A58335A3EFF89D91F /* Pods-AutoLayoutDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoLayoutDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoLayoutDemo/Pods-AutoLayoutDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 				AA1052411F3ED7CF00B55751 /* SegmentControl.swift */,
 				AA1A9F6C1F3763F500CF165F /* ViewController.swift */,
 				AA9FFED01FBD295A005967F7 /* DividedbyController.swift */,
+				AAC025BE204A9A9E000EAEAA /* TableHeaderView.swift */,
 				AA1A9F6E1F3763F500CF165F /* Main.storyboard */,
 				AA1A9F711F3763F500CF165F /* Assets.xcassets */,
 				AA1A9F731F3763F500CF165F /* LaunchScreen.storyboard */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC025BF204A9A9E000EAEAA /* TableHeaderView.swift in Sources */,
 				AA1A9F6D1F3763F500CF165F /* ViewController.swift in Sources */,
 				AA9FFED11FBD295A005967F7 /* DividedbyController.swift in Sources */,
 				AA1A9F6B1F3763F500CF165F /* AppDelegate.swift in Sources */,

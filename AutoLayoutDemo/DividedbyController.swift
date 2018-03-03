@@ -12,7 +12,7 @@ import SnapKit
 
 class DividedbyController: UIViewController {
     var tableView: UITableView!
-    var headerVeiw: UIView!
+    var headerVeiw: TableHeaderView!
     var textField: UITextField!
     var leftView: UIView!
     var button: UIButton!
@@ -27,34 +27,34 @@ class DividedbyController: UIViewController {
         
         self.tableView = UITableView()
         view.addSubview(tableView)
-        self.headerVeiw = UIView()
+           self.headerVeiw = TableHeaderView()
         self.headerVeiw.backgroundColor = .red
         self.tableView.tableHeaderView = headerVeiw
-        self.textField = UITextField()
-        self.textField.layer.borderColor = UIColor.blue.cgColor
-        self.textField.layer.borderWidth = 1
-        self.leftView = UIView()
-        self.leftView.backgroundColor = .brown
-        self.textField.leftView = self.leftView
-        self.textField.leftViewMode = .always
-        self.headerVeiw.addSubview(self.textField)
-        self.button = UIButton()
-        self.button.addTarget(self, action: #selector(click), for: .touchUpInside)
-        self.button.backgroundColor = .purple
-        view.addSubview(self.button)
-        self.textLabel = UILabel()
-        self.textLabel.backgroundColor = .gray
-        self.textLabel.textColor = .black
-        self.textLabel.text = "这是一窜测试数据"
-        self.textLabel.textAlignment = .center
-        view.addSubview(self.textLabel)
-        self.moreTextLabel = UILabel()
-        self.moreTextLabel.backgroundColor = .yellow
-        self.moreTextLabel.textColor = .black
-        self.moreTextLabel.preferredMaxLayoutWidth = 300
-        self.moreTextLabel.numberOfLines = 0
-        self.moreTextLabel.text = "这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据"
-        view.addSubview(self.moreTextLabel)
+//        self.textField = UITextField()
+//        self.textField.layer.borderColor = UIColor.blue.cgColor
+//        self.textField.layer.borderWidth = 1
+//        self.leftView = UIView()
+//        self.leftView.backgroundColor = .brown
+//        self.textField.leftView = self.leftView
+//        self.textField.leftViewMode = .always
+//        self.headerVeiw.addSubview(self.textField)
+//        self.button = UIButton()
+//        self.button.addTarget(self, action: #selector(click), for: .touchUpInside)
+//        self.button.backgroundColor = .purple
+//        view.addSubview(self.button)
+//        self.textLabel = UILabel()
+//        self.textLabel.backgroundColor = .gray
+//        self.textLabel.textColor = .black
+//        self.textLabel.text = "这是一窜测试数据"
+//        self.textLabel.textAlignment = .center
+//        view.addSubview(self.textLabel)
+//        self.moreTextLabel = UILabel()
+//        self.moreTextLabel.backgroundColor = .yellow
+//        self.moreTextLabel.textColor = .black
+//        self.moreTextLabel.preferredMaxLayoutWidth = 300
+//        self.moreTextLabel.numberOfLines = 0
+//        self.moreTextLabel.text = "这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据这是多窜测试数据"
+//        view.addSubview(self.moreTextLabel)
         self.segmentControl = SegmentControl(
             style: SetmentStyle(),
             titles: ["1", "2", "3", "4"],
@@ -67,45 +67,42 @@ class DividedbyController: UIViewController {
     
     func layout() {
         tableView.snp.makeConstraints { (make) in
-            make.left.top.equalTo(self.view).offset(20)
-            make.right.bottom.equalTo(self.view).offset(-20)
+            make.left.top.equalTo(self.view)
+            make.right.bottom.equalTo(self.view)
         }
         headerVeiw.snp.makeConstraints { (make) in
             make.width.equalTo(tableView.snp.width)
-            make.height.equalTo(180)
+            
         }
-        headerVeiw.snp.updateConstraints { (make) in
-            make.width.equalTo(tableView.snp.width)
-            make.height.equalTo(180)
-        }
-        
+        self.headerVeiw.titleLabel.text = "这是一行测试代码,看看有没有什么问题";
+        self.headerVeiw.layoutIfNeeded()
         tableView.layoutIfNeeded()
-        textField.snp.makeConstraints { (make) in
-            make.left.top.equalTo(self.headerVeiw).offset(40)
-            make.bottom.right.equalTo(self.headerVeiw).offset(-40)
-        }
-        leftView.snp.updateConstraints { (make) in
-            make.width.equalTo(69)
-            make.height.equalTo(44)
-        }
-        button.snp.makeConstraints { (make) in
-            self.topConstraint = make.top.equalTo(self.view).offset(100).constraint
-            make.centerX.equalTo(self.view.snp.centerX)
-            make.width.equalTo(60)
-            make.height.equalTo(30)
-        }
-        textLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.view.snp.top).offset(200)
-            make.left.equalTo(self.view.snp.left).offset(40)
-        }
-        moreTextLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(textLabel.snp.bottom).offset(10)
-            make.left.equalTo(textLabel.snp.left)
-        }
-        segmentControl.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(40)
-        }
+//        textField.snp.makeConstraints { (make) in
+//            make.left.top.equalTo(self.headerVeiw).offset(40)
+//            make.bottom.right.equalTo(self.headerVeiw).offset(-40)
+//        }
+//        leftView.snp.updateConstraints { (make) in
+//            make.width.equalTo(69)
+//            make.height.equalTo(44)
+//        }
+//        button.snp.makeConstraints { (make) in
+//            self.topConstraint = make.top.equalTo(self.view).offset(100).constraint
+//            make.centerX.equalTo(self.view.snp.centerX)
+//            make.width.equalTo(60)
+//            make.height.equalTo(30)
+//        }
+//        textLabel.snp.makeConstraints { (make) in
+//            make.top.equalTo(self.view.snp.top).offset(200)
+//            make.left.equalTo(self.view.snp.left).offset(40)
+//        }
+//        moreTextLabel.snp.makeConstraints { (make) in
+//            make.top.equalTo(textLabel.snp.bottom).offset(10)
+//            make.left.equalTo(textLabel.snp.left)
+//        }
+//        segmentControl.snp.makeConstraints { (make) in
+//            make.left.right.bottom.equalToSuperview()
+//            make.height.equalTo(40)
+//        }
     }
     
     @objc func click() {
